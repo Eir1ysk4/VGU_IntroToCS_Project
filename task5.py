@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import openpyxl
-from pyhtml2pdf import converter
+from xhtml2pdf import pisa
 from selenium.webdriver.support.select import Select
 import time
 
@@ -87,21 +87,25 @@ class Task5:
 
     def export_as_pdf(self):
         element = browser.find_element(By.ID, "sales-results")
-        # Get the inner HTML of the element
-        pdf_options = {
-            'page-size': 'A4',
-            'orientation': 'portrait',
-            'margin-top': '0mm',
-            'margin-right': '0mm',
-            'margin-bottom': '0mm',
-            'margin-left': '0mm',
-        }
-
         sales_results_html = element.get_attribute('innerHTML')
+        OUTPUT_FILENAME = "test.pdf"
+        result_file = open(OUTPUT_FILENAME, "w+b")  # w+b to write in binary mode.
+        pisa_status = pisa.CreatePDF(
+            sales_results_html,  # the HTML to convert
+            dest=result_file  # file handle to recieve result
+        )
         # Create an instance of HTML2PDF
 
         # Convert HTML to PDF and save it to a file
-        # converter.convert(sales_results_html, 'sample.pdf')
+        result_file.close()
+
+        result = pisa_status.err
+
+        if not result:
+            print("Successfully created PDF")
+        else:
+            print("Error: unable to create the PDF")
+            # converter.convert(sales_results_html, 'sample.pdf')
 
     def log_out(self):
         logout_button = browser.find_element(By.ID, "logout")
