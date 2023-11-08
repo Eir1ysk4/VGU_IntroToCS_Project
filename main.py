@@ -1,7 +1,5 @@
 from scheduler import *
 from task1 import *
-from task2 import *
-from task3 import *
 from task5 import *
 
 scheduler = Scheduler()

@@ -95,6 +95,8 @@ class Task5:
         self.browser.refresh()
         time.sleep(2)
         self.browser.refresh()
+        time.sleep(2)
+        self.browser.refresh()
         time.sleep(100)
 
     # def fill_and_submit_sales_form(self, sales_rep):
