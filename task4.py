@@ -1,7 +1,10 @@
+from dotenv import load_dotenv
+load_dotenv()
+import os
 import datetime as dt
 import requests
-BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
-API_KEY = "8638629b3877d52e8f249b14d702472b"
+BASE_URL = os.getenv("BASE_URL")
+API_KEY =  os.getenv('API_KEY')
 CITY = "Thanh pho Ho Chi Minh"
 class Task3:
     def __init__(self):
