@@ -1,0 +1,10 @@
+openai
+opencv-python
+openpyxl
+pipdeptree
+PyAudio
+numpy
+pyhtml2pdf
+SpeechRecognition
+tensorflow
+xhtml2pdf
