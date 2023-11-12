@@ -1,14 +1,15 @@
 import paho.mqtt.client as mqttclient
 from shared_resources import resources
-import time
 import json
 
-BROKER_ADDRESS = "demo.thingsboard.io"  #mqtt.thingsboard.cloud"
+BROKER_ADDRESS = "demo.thingsboard.io"  # mqtt.thingsboard.cloud"
 PORT = 1883
 THINGS_BOARD_ACCESS_TOKEN = "QxslxIX70oPecwXifyjo"
-class Task5:
 
+
+class Task5:
     client = None
+
     def __init__(self):
         print("Init task 6")
         self.client = mqttclient.Client("Gateway_Thingsboard")
@@ -32,12 +33,11 @@ class Task5:
             longitude = weather_data['lon']
             latitude = weather_data['lat']
             collect_data = {'temperature': temp, 'humidity': humid, 'longitude': longitude,
-                                'latitude': latitude}
+                            'latitude': latitude}
             print(collect_data)
             self.client.publish('v1/devices/me/telemetry', json.dumps(collect_data), 1)
         else:
             print("Weather data not available yet.")
-
 
     def subscribed(self):
         print("Subscribed...")
@@ -50,6 +50,7 @@ class Task5:
             self.client.subscribe("v1/devices/me/rpc/request/+")
         else:
             print("Connection is failed")
+
     def recv_message(client, message):
         print("Received: ", message.payload.decode("utf-8"))
         temp_data = {'value': True}

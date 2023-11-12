@@ -1,15 +1,15 @@
-import tensorflow as tf
 from keras.models import load_model
-from PIL import Image, ImageOps
 import numpy as np
 import cv2
 import time
+
 
 class Task1:
     cam = None
     model = None
     frame = None
     is_person_valid = False
+
     def __init__(self):
         print("Init task 1")
         self.cam = cv2.VideoCapture(0)
@@ -73,8 +73,6 @@ class Task1:
         else:
             print("Sorry, I cannot help you!!!")
             return False
-
-
 
 
 if __name__ == "_main_":
