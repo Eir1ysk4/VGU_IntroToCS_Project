@@ -6,4 +6,5 @@ class Command(Enum):
     WEATHER = auto()
     PLAY = auto()
     WEB = auto()
+    DATA = auto()
     # Add other commands as needed

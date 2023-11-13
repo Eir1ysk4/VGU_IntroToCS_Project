@@ -34,7 +34,7 @@ After your face is recognized, you can use voice commands within a 10-second win
 
 * __Checking the Weather__: Say a phrase including "weather" and the city's name. For example, "What's the weather in London?"
 
-* __Collecting Online Data__: Simply say "data" to trigger this function.
+* __Collecting Online Data__: Say a phrase including "data" to trigger this function.
 
 ### Configuration File
 For the .env file and other configurations, please contact the admin.
