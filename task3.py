@@ -138,9 +138,8 @@ class Task3:
             time.sleep(3)
 
             element = self.browser.find_element(By.XPATH, '//*[@id="contents"]/ytd-video-renderer[2]')
-            print(element)
             element.click()
-            time.sleep(100)
+            time.sleep(40)
             self.browser.close()
         except Exception as e:
             print(f"Error while playing YouTube music: {e}")

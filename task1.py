@@ -70,11 +70,6 @@ class Task1:
             max_confidence = predictions[0][max_index]
             print(max_index, max_confidence)
 
-            # Display the result on the frame
-            label = "Boss" if max_index == 0 else "Stranger"
-            cv2.putText(self.frame, label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
-            cv2.imshow("Human Detection", self.frame)
-
             # Read labels from the file and print the AI result
             data = [line.strip() for line in class_names]
             print("AI Result:", data[max_index])
